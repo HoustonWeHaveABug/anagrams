@@ -51,7 +51,7 @@ letter_t *letter;
 node_t *node;
 option_t options[OPTIONS_MAX+1], *option;
 	if (argc != 3) {
-		fprintf(stderr, "Usage: %s <list of words> <word minimal length>\n", argv[0]);
+		fprintf(stderr, "Usage: %s <path to dictionary> <word minimal length>\n", argv[0]);
 		return EXIT_FAILURE;
 	}
 	node_root = new_node();
@@ -60,7 +60,7 @@ option_t options[OPTIONS_MAX+1], *option;
 	}
 	fd = fopen(argv[1], "r");
 	if (!fd) {
-		fprintf(stderr, "Could not open list of words\n");
+		fprintf(stderr, "Could not open dictionary\n");
 		free_node(node_root);
 		return EXIT_FAILURE;
 	}
